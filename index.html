@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <title>Jefferson Piscinas — Limpeza, manutenção e produtos para sua piscina</title>
 <meta name="description" content="Limpeza, manutenção e produtos para piscinas em São Paulo. Visita gratuita para avaliação. Chame no WhatsApp.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18414117749"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18414117749');
+</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230a2e4d'/%3E%3Cpath d='M6 40q6-6 12 0t12 0 12 0 12 0' stroke='%2335c6e8' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -770,6 +778,15 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
 }, { threshold: 0.15 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Google Ads: dispara evento de conversão "Contato" ao clicar em qualquer botão do WhatsApp
+document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(link){
+  link.addEventListener('click', function(){
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {'send_to': 'AW-18414117749/t9-ICJ_XvOscEPXGxMxE'});
+    }
+  });
+});
 </script>
 </body>
 </html>
